@@ -1,0 +1,23 @@
+<h1>LES GOSSIPS</h1>
+
+<table>
+  <tr>
+    <th><h3>Auteur   </h3></th>
+    <th><h3>     gossip</h3></th>
+  </tr>
+
+  <% @gossip.each do |gossip| %>
+    <tr>
+      <td><b><%= gossip.user_name %></b></td>
+
+      <td><b><%= gossip.content %></b></td>
+
+      <td><%= link_to 'Afficher', gossip_path(gossip) %></td>
+
+      <td><%= link_to 'Editer', edit_gossip_path(gossip) %></td>
+
+    </tr>
+  <% end %>
+</table>
+
+<p><%=  link_to 'Ajoute ton nouveau Gossip', new_gossip_path %></p>

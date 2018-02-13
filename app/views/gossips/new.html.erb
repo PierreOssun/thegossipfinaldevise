@@ -1,0 +1,16 @@
+<p>
+<h2>Ecris ton nouveau Gossip</h2>
+</p>
+<strong>Auteur (Anonyme)</strong>
+<%= form_for @gossip, url: {action: "create"} do |f| %>
+<%= render 'shared/error_message_gossip' %>
+<%= f.text_field :user_name %>
+</p>
+<strong>Gossip</strong>
+<p>
+<%= f.text_area :content %>
+</p>
+<p>
+  <%= f.submit "Poster" %>
+<% end %>
+</p>

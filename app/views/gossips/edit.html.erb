@@ -1,0 +1,19 @@
+<p>
+<h2>Editer le Gossip</h2>
+</p>
+<strong>Auteur (Anonyme)</strong>
+<%= form_for @gossip, url: {action: "update"} do |f| %>
+     <%= render 'shared/error_message_gossip' %>
+<%= f.text_field :user_name %>
+</p>
+<strong>Gossip</strong>
+<p>
+<%= f.text_area :content %>
+</p>
+<p>
+<%= link_to 'Clique ici pour détruire', @gossip, method: :delete %>
+</p>
+<p>
+  <%= f.submit "Mettre à jour" %>
+<% end %>
+</p>

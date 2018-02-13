@@ -1,0 +1,21 @@
+<% content_for :top_content do %>
+ <% if user_signed_in? %>
+   <div class="jumbotron">
+     <div class="container">
+       <h1>LE CLUB DES GOSSIPS</h1>
+       <p>Rejoins cette page pour poster tes Gossips</p>
+       <%= link_to 'Gossips', '/gossip', class: 'btn btn-primary btn-lg' %>
+      </div>
+     </div>
+   <% else %>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome!</h1>
+      <p>Register to get started.</p>
+      <p>
+        <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+      </p>
+    </div>
+  </div>
+<% end %>
+<% end %>

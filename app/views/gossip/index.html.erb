@@ -1,0 +1,20 @@
+<% header "Gossip" %>
+<h1>Les Gossips</h1>
+
+<table>
+  <tr>
+    <th>Auteur</th>
+    <th>gossip</th>
+  </tr>
+
+  <% @gossip.each do |gossip| %>
+    <tr>
+      <td><%= gossip.anonymous_author %></td>
+      <td><%= gossip.content %></td>
+      <td><%= link_to 'Afficher', gossip_path(gossip) %></td>
+      <td><%= link_to 'Editer', edit_gossip_path(gossip) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%=  link_to 'Hey ! Ajoute ton nouveau Gossip !', new_gossip_path %></p>
